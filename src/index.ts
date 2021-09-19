@@ -1,5 +1,6 @@
 import express from "express";
 import session from "express-session";
+import serverless from "serverless-http";
 import { chemicalController } from "./controllers/chemical.controller";
 
 const port = 3000;
@@ -27,9 +28,7 @@ app.get("/safety", (req, res) => {
 
 app.use("/chemical", chemicalController);
 
-app.listen(process.env.PORT || port, () => {
-  console.log(`listening on ${port}...`);
-});
+module.exports.handler = serverless(app);
 
 //TODO: remove session
 //TODO: style index page
