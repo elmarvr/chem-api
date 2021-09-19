@@ -27,9 +27,11 @@ app.get("/safety", (req, res) => {
   res.render("safety", req.session.info);
 });
 
-app.use("/chemical", chemicalController);
+app.use("/.netlify/functions/server", chemicalController);
 
-module.exports.handler = serverless(app);
+const handler = serverless(app);
+
+export { handler };
 
 //TODO: remove session
 //TODO: style index page

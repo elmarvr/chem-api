@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add --dev @types/serverless-http
+  /usr/local/bin/node /usr/local/bin/yarn add netlify-lamda
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fserverless-http: Not found
+  Error: https://registry.yarnpkg.com/netlify-lamda: Not found
       at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66988:18)
       at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140662:22)
       at Request.emit (events.js:315:20)
@@ -33,7 +33,7 @@ npm manifest:
     "description": "",
     "main": "index.js",
     "scripts": {
-      "build": "ts-node ./src/index.ts",
+      "build": "npm install && ts-node --transpile-only ./src/index.ts",
       "watch": "nodemon"
     },
     "keywords": [],
