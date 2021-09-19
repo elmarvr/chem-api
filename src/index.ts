@@ -27,7 +27,7 @@ app.get("/safety", (req, res) => {
 
 app.use("/chemical", chemicalController);
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`listening on ${port}...`);
 });
 
