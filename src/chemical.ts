@@ -1,6 +1,7 @@
+//@ts-ignore
+import { Handler } from "@netlify/functions";
 import express, { Router } from "express";
 import session from "express-session";
-//@ts-ignore
 import serverless from "serverless-http";
 import { chemicalController } from "./controllers/chemical.controller";
 
