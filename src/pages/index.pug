@@ -1,0 +1,86 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Chemical Safety Search
+	body
+		div
+			label What chemical?
+			input(name="chemical" type="text")
+			small
+
+		script.
+			const input = document.querySelector("input");
+			const small = document.querySelector("small");
+
+			input.addEventListener("keydown", async (e) => {
+				if (e.keyCode === 13) {
+					e.preventDefault();
+					const value = e.target.value;
+					
+
+					input.classList.add("loading");
+					const response = await fetch(`/chemical/${value}`);
+
+					if (response.status === 200) {
+						window.location.href = "/safety";
+						return;
+					}
+
+					input.classList.add("error");
+
+					const { message } = await response.json();
+					input.classList.remove("loading");
+		
+					small.textContent = message;
+				}
+			})
+		
+		style.
+			body {
+				margin: 0;
+				height: 100vh;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: #F9FAFB;
+				flex-direction: column;
+				font-family: sans-serif;
+				
+			}
+
+			label {
+				display: block;
+				margin-bottom: 0.5rem;
+			}
+			
+			div {
+				width: 100%;
+				max-width: 400px;
+			}
+
+			input {
+				width: 100%;
+				height: 2rem;
+				border-radius: 0.5rem;
+				border: 1px solid #D1D5DB;
+				padding-left: 1rem;
+				font-size: 1.25rem;
+				margin-bottom: 0.25rem;
+			}
+
+			input:focus {
+				outline: none;
+			}
+
+			input.error {
+				border-color: #DC2626;
+				color: #EF4444;
+			}
+
+			input.error:focus {
+				border-color: #991B1B;
+			}

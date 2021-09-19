@@ -1,0 +1,103 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Safety Sheet
+	body
+		div.container
+			div.card
+				h1=name
+				h3=cas_number
+				h2 Pictogrammen
+				div.content
+					each pictogram in pictograms 
+						img(src=pictogram)
+
+				h2 H-zinnen 
+				ul.content
+					each code in codes.h
+						li #{code.label}: #{code.content}
+
+				h2 P-zinnen 
+				ul.content
+					each code in codes.p
+						li #{code.label}: #{code.content}
+			a(href="/") terug
+
+		style.
+			h1, h2, h3 {
+				margin: 0;
+				font-weight: 600;
+			}
+
+			h1 {
+				font-size: 1.5rem;
+				margin-bottom: 0.5rem;
+			}
+
+			h2 {
+				font-size: 1.25rem;
+				margin-bottom: 0.75rem;
+				margin-top: 1rem;
+			}
+
+			h3 {
+				font-weight: normal;
+				margin-bottom: 2rem;
+			}
+
+			body {
+				margin: 0;
+				font-family: sans-serif;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				min-height: 100vh;
+				background: #F9FAFB;
+				flex-direction: column;
+			}
+
+			.card {
+				padding: 2rem 3rem;
+				border: 1px solid #E5E7EB;
+				background: white;
+				min-width: 500px;
+		
+			}
+
+			.container {
+				margin: 2rem;
+			}
+
+			.content { 
+				min-height: 50px;
+			}
+
+			ul {
+				margin: 0;
+				list-style: none;
+				padding: 0;
+			}
+
+			li + li {
+				margin-top: 0.5rem;
+			}
+
+			a {
+				padding: 0.75rem 0;
+				display: block;
+
+				color: #2563EB;
+			}
+			
+			img + img {
+				margin-left: 1rem;
+			}
+
+			a:hover {
+				color: #1D4ED8;
+			}
+
