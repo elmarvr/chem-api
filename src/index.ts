@@ -16,7 +16,7 @@ app.set("view engine", "pug");
 app.set("views", "./src/pages");
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.send("test");
 });
 
 app.get("/safety", (req, res) => {
