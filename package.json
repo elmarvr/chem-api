@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "yarn install && tsc && netlify-lambda build ./dist",
+    "build": "npm i && tsc && netlify-lambda build ./dist",
     "watch": "nodemon"
   },
   "keywords": [],
