@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm i && tsc && netlify-lambda build ./src/dist",
+    "build": "tsc && netlify-lambda build ./dist",
     "watch": "nodemon"
   },
   "keywords": [],
