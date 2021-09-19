@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "yarn install && ts-node --transpile-only ./src/index.ts",
+    "build": "npm install && ts-node --transpile-only ./src/index.ts",
     "watch": "nodemon"
   },
   "keywords": [],
