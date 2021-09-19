@@ -1,6 +1,6 @@
-//@ts-ignore
 import express from "express";
 import session from "express-session";
+//@ts-ignore
 import serverless from "serverless-http";
 import { chemicalController } from "./controllers/chemical.controller";
 
